@@ -1,6 +1,11 @@
 function isCar(car1, car2, car3) {
-    // return 
+    var arr = [car1, car2, car3];
+    var trues = arr.filter(filtr => filtr === true);
+    var falses = arr.filter(filtr => filtr === false);
+    return trues.length == arr.length || falses.length == arr.length ? true : false;
 }
+
+
 
 console.log(isCar(true, true, true));
 console.log(isCar(false, false, false));
