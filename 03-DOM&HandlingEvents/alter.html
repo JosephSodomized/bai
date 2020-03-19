@@ -1,27 +1,68 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Pink Floyd</title>
-		<meta charset="UTF-8">
-	</head>
-	<body>
-		<h1>Another Brick in the Wall</h1>
-		<h3>Pink Floyd</h3>
-		<p>We don't need no education<br>
+
+<head>
+	<title>Pink Floyd</title>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<h1>Another Brick in the Wall </h1>
+	<h3>Pink Floyd</h3>
+	<p id='it'>We don't need no education<br>
 		We don't need no thought control<br>
 		No dark sarcasm in the classroom<br>
 		Teachers leave them kids alone<br>
 		Hey! Teachers! Leave them kids alone<br>
 		All in all it's just another brick in the wall<br>
 		All in all you're just another brick in the wall</p>
-		
-		<p style="visibility: hidden;">Pink Floyd were an English rock band formed in London.<br>
+
+	<p id="descrip" style="visibility: hidden;">Pink Floyd were an English rock band formed in London.<br>
 		They achieved international acclaim with their progressive<br>
 		and psychedelic music.</p>
-		
-		<script>
-			// a JavaScript code here ...
-			
-		</script>
-	</body>
+
+	<script>
+
+		//pointers
+		var h1 = document.querySelector('h1');
+		var h3 = document.querySelector('h3');
+		var it = document.querySelector('#it');
+		var desc = document.querySelector('#descrip');
+		document.querySelector('body').addEventListener('dblclick', function(){
+			this.style.backgroundColor = "yellow";
+		})
+
+		//listeners
+		h1.addEventListener('click', first);
+		desc.addEventListener('click', addPic);
+		h3.addEventListener('click', function(){
+			desc.style.visibility = 'visible';
+		});
+		it.addEventListener('click', function(){
+			this.style.fontStyle = 'italic';
+		});
+		it.addEventListener('copy', function(){
+			alert("COPURIGHT");
+		});
+
+		//fn
+		function first() {
+			var part2 = document.createElement('b');
+			var t = document.createTextNode('Part2');
+			part2.appendChild(t);
+			h1.appendChild(part2);
+		}
+
+		function addPic(){
+			var box = document.createElement('img');
+			box.setAttribute('src', "https://upload.wikimedia.org/wikipedia/en/d/d6/Pink_Floyd_-_all_members.jpg");
+			desc.appendChild(box);
+			box.appendChild(img);
+		}
+
+
+
+	</script>
+</body>
+
 </html>
