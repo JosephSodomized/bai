@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Typing test</title>
-		<meta charset="UTF-8">
-	</head>
-	<body>
-		<h1>How fast are your fingers?</h1>
-		<h3>You have 30 seconds. Just start typing...</h3>
-		<p>Nam strzelać nie kazano. - Wstąpiłem na działo<br>
+
+<head>
+	<title>Typing test</title>
+	<meta charset="UTF-8">
+</head>
+
+<body>
+	<h1>How fast are your fingers?</h1>
+	<h3>You have 30 seconds. Just start typing...</h3>
+	<p>Nam strzelać nie kazano. - Wstąpiłem na działo<br>
 		I spójrzałem na pole; dwieście armat grzmiało.<br>
 		Artyleryi ruskiej ciągną się szeregi,<br>
 		Prosto, długo, daleko, jako morza brzegi;<br>
@@ -19,13 +21,43 @@
 		Czarne chorągwie na śmierć prowadzą zastępy.<br>
 		Przeciw nim sterczy biała, wąska, zaostrzona,<br>
 		Jak głaz bodzący morze, reduta Ordona.</p>
-		
-		<textarea rows="15" cols="50"></textarea><br>
-		
-		<script>
-			// a JavaScript code here ...
-			
-		</script>
-		
-	</body>
+
+	<textarea rows="15" cols="50"></textarea><br>
+	<div class="space"></div>
+	<script>
+		var area = document.querySelector('textarea');
+		var space = document.querySelector('.space');
+		setTimeout(getValue, 30000)
+
+		function getValue() {
+			var words = [];
+			(function () {
+				var arr = area.value.split(' ');
+				for (let i = 0; i < arr.length; i++) {
+					if (arr[i].length > 1) {
+						words.push(arr[i])
+					}
+				}
+				return words;
+			})();
+			var char = area.value.replace(/ /g, "").split('').length;
+
+
+			var el = document.createElement('div');
+			var text1 = document.createTextNode('Liczba zdań to: ' + words.length);
+			el.appendChild(text1);
+			space.appendChild(el);
+
+			var characters = document.createElement('div');
+			var text2 = document.createTextNode('Liczba znaków to: ' + char);
+			characters.appendChild(text2);
+			space.appendChild(characters);
+
+			area.disabled = true;
+		}
+
+	</script>
+
+</body>
+
 </html>
