@@ -9,8 +9,8 @@
 <body>
 	<h1>Filling in a form</h1>
 	<form>
-		<p>University:<br><input type="text"></p>
-		<p>Address:<br><input type="text"></p>
+		<p id='q'>University:<br><input type="text"></p>
+		<p id='a'>Address:<br><input type="text"></p>
 		<button type="button">Hint</button>
 	</form>
 
@@ -18,6 +18,16 @@
 		// a JavaScript code here ...
 		var university = "Cracow University of Economics";
 		var address = "Rakowicka 27, Krakow, POLAND";
+
+		//pointers
+		var uni = document.querySelector('#q input');
+		var add = document.querySelector('#a input');
+		var btn = document.querySelector('button').addEventListener('click', addHint);
+
+		function addHint() {
+			uni.value = university;
+			add.value = address;
+		}
 
 	</script>
 </body>
