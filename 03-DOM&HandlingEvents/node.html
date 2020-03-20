@@ -6,7 +6,51 @@
 	</head>
 	<body>
 		<script>
-			// a JavaScript code here ...
+			
+			var table = document.createElement('table');
+
+			var tr = document.createElement('tr');
+			var tr2 = document.createElement('tr');
+
+			var td1 = document.createElement('td');
+			var td2 = document.createElement('td');
+			var td3 = document.createElement('td');
+			var td4 = document.createElement('td');
+			
+			var txt1 = document.createTextNode('1');
+			var txt2 = document.createTextNode('2');
+			var txt3 = document.createTextNode('3');
+			var txt4 = document.createTextNode('4');
+			
+			document.querySelector('body').appendChild(table);
+			
+			td1.appendChild(txt1);		
+			td2.appendChild(txt2);
+			td3.appendChild(txt3);
+			td4.appendChild(txt4);
+			
+			tr.appendChild(td1);
+			tr.appendChild(td2);
+			tr2.appendChild(td3)
+			tr2.appendChild(td4);
+			
+			table.appendChild(tr);
+			table.appendChild(tr2);
+			
+			//styles
+			table.style.borderCollapse = "collapse"
+			table.style.border = "1px solid black"
+			td1.style.padding = "5px 50px"
+			td2.style.padding = "5px 50px"
+			td3.style.padding = "5px 50px"
+			td4.style.padding = "5px 50px"
+			td1.style.border = "1px solid black"
+			td2.style.border = "1px solid black"
+			td3.style.border = "1px solid black"
+			td4.style.border = "1px solid black"
+			
+
+			
 			
 		</script>
 	</body>
