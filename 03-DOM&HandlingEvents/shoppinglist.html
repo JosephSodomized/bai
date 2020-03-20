@@ -5,7 +5,6 @@
     <title>Shopping List</title>
     <meta charset="UTF-8">
 </head>
-
 <body>
     <h1>Shopping List</h1>
     <p>
@@ -19,22 +18,36 @@
         <li>bread</li>
     </ol>
 
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
     <script>
-    	//pointers
+        $(function () {
+          $('#myList').on('dblclick','li', function(){
+             $(this).remove();
+         })
+        });
+
+        //pointers
         var myList = document.getElementById('myList');
         var myBtn = document.querySelector('button').addEventListener('click', addProduct);
         var newInput = document.querySelector('#newInput');
         //listeners
 
         //fn
-        function addProduct(){
+        function addProduct() {
             var newItem = document.createElement('li');
+            newItem.className = 'new_item';
             var text = document.createTextNode(newInput.value);
             newItem.appendChild(text);
             myList.appendChild(newItem);
-            newInput.value= "";
+            newInput.value = "";
         }
 
+        
+     
+       
     </script>
 </body>
 
